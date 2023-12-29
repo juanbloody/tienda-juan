@@ -1,0 +1,53 @@
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EAB126;
+    color: white;
+
+
+}
+
+.cabecera .title {
+    margin-left: 50px;
+    width: 175px;
+    text-align: left;
+    padding: 10px 0px 10px 0px;
+}
+
+.cabecera .title a {
+    color: white;
+    text-decoration: none;
+}
+
+.cabecera .name-usuario {
+    margin-right: 15px;
+    width: 200px;
+    text-align: right;
+    padding: 10px 0px 10px 0px;
+}
+
+/*responsive*/
+
+@media (max-width: 500px) {
+    .cabecera {
+        display: flex;
+        flex-direction: column;
+
+
+
+    }
+
+    .cabecera .title {
+        margin-left: 10px;
+        
+
+
+    }
+
+    .cabecera .name-usuario {
+        
+        display: none;
+        
+
+    }
+}

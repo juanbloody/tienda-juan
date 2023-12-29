@@ -1,0 +1,29 @@
+<aside class="lateral">
+
+    <div class="producto">
+       
+       <a [routerLink]="['/productos']" [routerLinkActive]="['active']">
+          <img src="../assets/icon/producto.svg" alt="" title="productos">
+       </a>
+ 
+    </div>
+    <div class="venta">
+       <a [routerLink]="['/ventas']" [routerLinkActive]="['active']">
+          <img src="../assets/icon/venta.svg" alt="" title="ventas">
+       </a>
+       
+    </div>
+    <div class="usuario">
+       <a [routerLink]="['/usuarios']" [routerLinkActive]="['active']">
+          <img src="../assets/icon/usuario.svg" alt="" title="usuarios">
+       </a>
+       
+    </div>
+
+    <div class="logout" *ngIf="verificar_token">
+      
+      <img (click)="logout()" src="../assets/icon/logout.svg" alt="" title="logout">
+      
+   </div>
+ 
+ </aside>

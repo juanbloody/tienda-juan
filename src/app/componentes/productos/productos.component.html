@@ -1,0 +1,123 @@
+<div class="caja-formulario" [style.display]="display ? 'block' : 'none' ">
+
+  <form [formGroup]="form" (ngSubmit)="save($event)">
+    <div class="caja-input">
+
+      <label for="">codigo</label>
+      <input type="text" formControlName="codigo">
+
+      <label for="">nombre</label>
+      <input type="text" formControlName="nombre" value="producto.nombre">
+
+      <label for="valor">valor</label>
+      <input (keyup)="operaciones()" type="number" formControlName="valor">
+
+      <label for="">cantidad</label>
+      <input (keyup)="operaciones()" type="number" formControlName="cantidad">
+
+      <label for="">total</label>
+      <input type="number" formControlName="total">
+
+      <label *ngIf="id" for="">quedaron</label>
+      <input *ngIf="id" type="number" formControlName="quedaron">
+
+      <label for="">valor_provedor</label>
+      <input (keyup)="operaciones()" type="number" formControlName="valor_provedor">
+
+      <label for="">valor_unitario</label>
+      <input type="number" formControlName="valor_unitario">
+
+      <label for="">observaciones</label>
+      <input type="text" formControlName="observaciones">
+
+
+      <button class="guardar">guardar</button>
+      <button type="button" (click)="FormAction('cerrar')" class="cerrar">cerrar</button>
+    </div>
+
+  </form>
+</div>
+
+
+<!--<img *ngIf="!productos" src="../assets/icon/cargando.gif" alt="">-->
+<p *ngIf="!productos">cargando</p>
+
+<div class="caja-tabla" *ngIf="productos">
+
+  <div class="caja-boton">
+    <button (click)="FormAction('agregar')">agregar producto</button>
+    <input type="search" name="buscar" placeholder="buscar" [(ngModel)]="buscar" (keyup)="search()">
+
+  </div>
+
+
+  <div class="tabla" *ngFor="let producto of productos | paginate: { itemsPerPage: 5, currentPage: p }">
+
+    <div class="columna" *ngIf="producto.codigo">
+      <div class="header">codigo</div>
+      <div *ngIf="producto.codigo">{{producto.codigo}}</div>
+    </div>
+
+    <div class="columna">
+    <div class="header">nombre</div>
+    <div>{{producto.nombre}}</div>
+    </div>
+
+    <div class="columna">
+      <div class="header">valor</div>
+      <div>{{producto.valor.toLocaleString('es-CO')}}</div>
+    </div>
+
+    <div class="columna">
+      <div class="header">cantidad</div>
+      <div>{{producto.cantidad}}</div>
+    </div>
+
+    <div class="columna">
+      <div class="header">total</div>
+      <div>{{producto.total.toLocaleString('es-CO')}}</div>
+    </div>
+
+    <div class="columna">
+      <div  class="header">quedaron</div>
+      <div>{{producto.quedaron}}</div>
+    </div>
+
+    <div class="columna">
+      <div class="header">valor_quedaron</div>
+      <div>{{producto.valor_quedaron.toLocaleString('es-CO')}}</div>
+    </div>
+
+    <div class="columna">
+      <div class="header">valor_provedor</div>
+      <div>{{producto.valor_provedor.toLocaleString('es-CO')}}</div>
+    </div>
+
+    <div class="columna">
+      <div class="header">valor_unitario</div>
+      <div>{{producto.valor_unitario.toLocaleString('es-CO')}}</div>
+    </div>
+
+    <div class="columna" *ngIf="producto.observaciones">
+      <div class="header">observaciones</div>
+      <div>{{producto.observaciones}}</div>
+    </div>
+
+    <div class="columna accion" >
+      <div class="header">accion</div>
+      <div>
+        <button (click)="FormAction('editar',producto.id)" type="button" class="editar">editar</button>
+        <button (click)="destroy(producto.id)" type="button" class="borrar">borrar</button>
+      </div>
+    </div>
+
+
+  </div>
+
+  
+
+
+  <pagination-controls *ngIf="productos" (pageChange)="p = $event" previousLabel="" nextLabel="">
+  </pagination-controls>
+
+</div>

@@ -1,0 +1,22 @@
+div{
+    display: flex;
+    justify-content: center;
+}
+
+div img{
+   
+    height: 100vh;
+
+}
+
+/*responsive*/
+
+@media (max-width: 500px) {
+    
+    div img{
+        display: block;
+        width: 100%;
+        height: auto;
+    
+    }
+}

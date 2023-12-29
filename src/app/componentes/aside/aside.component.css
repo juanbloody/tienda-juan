@@ -1,0 +1,49 @@
+.lateral{
+    background-color:#1B7B34;
+    width: 50px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+.lateral .producto{
+    margin-top: 50px;
+}
+
+.lateral div {
+    cursor: pointer;
+    margin-bottom: 13px;
+    width: 34px;
+    margin: auto;
+}
+
+.lateral div img{
+    width: 100%;
+    
+   
+}
+
+/*responsive*/
+
+@media (max-width: 500px) {
+
+    .lateral{
+        display: flex;
+        justify-content: space-around;
+       
+       position: relative;
+        width: 100%;
+    }
+
+    .lateral .producto{
+        margin-top: 0px;
+    }
+
+    .lateral div {
+        cursor: pointer;
+        margin-bottom: 13px;
+        width: 34px;
+        margin: 0px;
+        
+    }
+}

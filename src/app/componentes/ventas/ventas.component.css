@@ -1,0 +1,324 @@
+.caja-formulario {
+
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.041);
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    z-index: 2;
+
+
+}
+
+p{
+    text-align: center;
+    margin-top: 200px;
+    font-size: 40px;
+    color: #EAB126;
+    font-weight: bold;
+}
+
+.caja-formulario>div {
+    background-color: white;
+    width: 90%;
+    margin: 100px auto;
+    padding-bottom: 50px;
+}
+
+.form-venta{
+    padding: 20px;
+}
+
+
+.boton-desplegable {
+    width: 200px;
+    background-color: #1fB58F;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.cuadro-desplegable {
+    width: 200px;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+    max-height: 140px;
+}
+
+.titulo {
+    padding: 10px;
+   
+
+}
+
+
+
+.form-venta input[type="search"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+
+    padding: 5px 0px 5px 2px;
+}
+
+.form-venta input[type="search"]:focus {
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+.opciones {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+}
+
+.opciones li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.opciones li:hover {
+    background-color: #f0f0f0;
+}
+
+.form-venta input[type="number"] {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin: 15px 0px 15px 0px;
+}
+
+.form-venta input[type="number"]:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.form-venta button {
+    border: none;
+    color: white;
+    font-size: 15px;
+    padding: 8px 15px 8px 15px;
+    cursor: pointer;
+}
+
+.form-venta .agregar {
+    background-color: #1fB58F;
+    
+}
+
+.form-venta .agregar {
+    background-color: #1fB58F;
+    
+}
+
+.form-venta .cerrar {
+    background-color: #F24C4E;
+    margin-left: 5px;
+    
+}
+/*table form*/
+
+.caja-formulario .caja-table {
+
+    width: 90%;
+    margin: auto;
+
+}
+
+.delete {
+    cursor: pointer;
+}
+
+.caja-formulario .caja-table .total {
+    display: block;
+}
+
+.caja-formulario .caja-table .total .valor,
+.ganado {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.caja-formulario .caja-table .total .guardar {
+    background-color: #1fB58F;
+    cursor: pointer;
+    padding: 7px 8px 7px 8px;
+    margin: 0px 5px 0px 5px;
+}
+
+.caja-formulario .caja-table .total .cancelar {
+    background-color: #F24C4E;
+    padding: 7px 7px 7px 7px;
+    margin: 0px 0px 0px 0px;
+    cursor: pointer;
+}
+
+
+/*table*/
+
+.caja-tabla {
+    width: 96%;
+    margin: auto;
+
+}
+
+.caja-boton {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    
+
+}
+
+.generar {
+    background-color: #1B7B34;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.form-tabla {
+    
+    width: 200px;
+    text-align: center;
+    padding: 10px 0px;
+    background-color: #1fB58F;
+    color: white;
+}
+
+.form-tabla label {
+    display: block;
+    margin-bottom: 5px;
+    
+}
+
+input[type="date"] {
+    width: 115px;
+    padding: 7px;
+   
+    font-size: 16px;
+
+    
+}
+
+.boton-buscar {
+    width: 115px;
+    padding:7px;
+    margin-top: 10px;
+    font-size: 15px;
+    background-color: #EAB126;
+    color: white;
+    cursor: pointer;
+    border: none;
+   
+
+
+}
+
+
+.caja-table {
+    border: 2px solid #1B7B34;
+    margin-bottom: 40px;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+
+
+}
+
+
+
+table tr {
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+table th,
+td {
+    border-bottom: 1px solid #1fB58F;
+    padding: 5px 0px 5px 0px;
+}
+
+.total {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 5px 0px 5px 0px;
+}
+
+.fecha {
+    margin-left: 5px;
+}
+
+.valor {
+
+  text-align: right;
+  margin-right: 5px;
+   
+}
+
+.total div:last-child,
+.total div:nth-child(3) {
+    margin-top: 10px;
+
+}
+
+.total button {
+    padding: 7px 14px 7px 14px;
+    color: white;
+    border: none;
+    font-size: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+
+}
+
+.total .editar {
+    background-color: green;
+}
+
+.total .borrar {
+    background-color: red;
+
+}
+
+/*responsive*/
+
+@media (max-width: 500px) {
+    .caja-boton {
+        display: block;
+        
+        margin-top: 5px;
+        margin-bottom: 20px;
+        
+    
+    }
+    
+}

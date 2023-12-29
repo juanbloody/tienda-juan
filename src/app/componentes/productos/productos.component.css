@@ -1,0 +1,198 @@
+.red {
+    border: 1px solid red;
+}
+
+p{
+    text-align: center;
+    margin-top: 200px;
+    font-size: 40px;
+    color: #EAB126;
+    font-weight: bold;
+}
+
+.caja-formulario {
+
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.041);
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    z-index: 2;
+    display: none;
+}
+
+form {
+
+    width: 80%;
+    margin: 0px auto;
+    padding: 20px 0px 20px 0px;
+    background: white;
+}
+
+.caja-input {
+    width: 90%;
+    margin: auto;
+}
+
+.caja-input label {
+    font-size: 14px;
+
+}
+
+.caja-input input {
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin: 12px 0px 35px 0px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: rgba(0, 0, 0, 0.774);
+
+}
+
+.caja-input input:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+form button {
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 8px 15px 8px 15px;
+    cursor: pointer;
+
+
+}
+
+form .guardar {
+    background-color: #EAB126;
+}
+
+form .cerrar {
+    background-color: #F24C4E;
+    margin-left: 10px;
+}
+
+
+
+/*tabla*/
+
+.caja-tabla {
+    width: 96%;
+    margin: auto;
+}
+
+.caja-boton {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.caja-boton button {
+    background-color: #1B7B34;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+.caja-boton input[ type="search"] {
+    width: 160px;
+    text-align: center;
+    margin-top: 4.1px;
+    height: 36px;
+}
+
+.tabla {
+    border: 2px solid #1B7B34;
+    margin-bottom: 20px;
+}
+
+.columna {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+.columna div {
+    text-align: center;
+    border-bottom: 1px solid #1fB58F;
+    padding: 5px 0px 5px 0px;
+}
+
+.accion div {
+
+    border-bottom: none;
+}
+
+.columna .header {
+
+    border-right: 2px solid #1B7B34;
+}
+
+
+.columna button {
+
+    padding: 7px 12px 7px 12px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+
+.columna .editar {
+
+    background-color: #1fB58F;
+    
+    margin-right: 5px;
+}
+
+.columna .borrar {
+
+    background-color: red;
+   
+}
+
+
+/* responsive*/
+@media (max-width: 500px) {
+    .caja-boton {
+        flex-direction: column;
+    }
+
+    .caja-boton button {
+        width: 160px;
+
+    }
+
+    .caja-boton input[ type="search"] {
+        margin: 10px 0px 5px 2px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .columna {
+
+        grid-template-columns: auto;
+
+    }
+
+    .columna .header {
+
+        border: none;
+        font-weight: bold;
+    }
+
+
+
+}

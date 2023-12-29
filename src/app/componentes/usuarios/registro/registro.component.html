@@ -1,0 +1,60 @@
+<div class="caja-formulario" [style.display]="display_form ? 'block' : 'none' ">
+    <form action="">
+      <div class="caja-input">
+        <label for="">nombre</label>
+        <input type="text"  name="nombre" [(ngModel)]="nombre">
+
+        <label for="">apellidos</label>
+        <input type="text"  name="apellido" [(ngModel)]="apellido">
+
+        <label for="">contraseña</label>
+        <input type="password" name="password" [(ngModel)]="password">
+        
+        <button  type="button" (click)="save()" class="guardar">guardar</button>
+        <button type="button" (click)="FormAction('cerrar')" class="cerrar">cerrar</button>
+      </div>
+  
+    </form>
+  </div>
+  
+  <p *ngIf="!usuarios">cargando</p>
+  
+  <div *ngIf="usuarios" class="caja-tabla">
+  
+      <div class="caja-boton">
+        <button type="button" (click)="FormAction('agregar')" >agregar usuario</button>
+      </div>
+    
+    
+      <div class="caja-table">
+        <table>
+          <thead>
+            <tr>
+              <th>nombre</th>
+              <th>apellidos</th>
+              <th>accion</th>
+              
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let usuario of usuarios">
+
+              <td>{{usuario.name}}</td>
+              <td>{{usuario.apellidos}}</td>
+              <td>
+                
+                <button (click)="editar(usuario)"  class="editar">editar</button>
+               
+                <button  *ngIf="usuario.rol != 'admin'" type="button" (click)="destroy(usuario.id)" class="borrar">borrar</button>
+              </td>
+              
+            </tr>
+      
+          </tbody>
+      
+        </table>
+  
+      </div>
+    
+    </div>

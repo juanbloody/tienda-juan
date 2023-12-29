@@ -1,0 +1,48 @@
+form {
+    margin: 100px auto;
+    padding: 40px;
+    width: 40%;
+    border-radius: 5px;
+    background-color: #1fb590a2;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+    width: 100%;
+
+}
+
+input {
+    
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding:15px 0px 15px 5px;
+    font-size: 15px;
+    box-sizing: border-box;
+    border: none;
+}
+
+button {
+    width: 100%;
+    padding:15px 0px 15px 0px;
+    font-size: 17px;
+    background-color: #EAB126;
+    border-color: #EAB126;
+    color: white;
+    border-style: outset;
+    cursor: pointer;
+}
+
+/* responsive*/
+
+@media (max-width: 800px) {
+    form {
+
+        width: 55%;
+
+    }
+}

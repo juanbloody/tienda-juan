@@ -1,0 +1,58 @@
+.color1 {
+    color: #1fB58F;
+}
+
+.color2 {
+    color: #EAB126
+}
+
+.color3 {
+    color: #F24C4E;
+}
+
+.color4 {
+    color: #1B7B34;
+}
+
+/*
+.color5 {
+    color: #ffffaf;
+}
+*/
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: 50px auto;
+    
+    
+}
+
+.cabecera {
+    grid-column: 1/3;
+    z-index: 2;
+
+}
+
+.lateral {
+    z-index: 1;
+}
+
+.seccion {
+    grid-column: 2/3;
+}
+
+/*responsive*/
+
+@media (max-width: 500px) {
+    .seccion {
+        grid-column: 1/3;
+    }
+
+    .lateral {
+        z-index: 1;
+        grid-column: 1/3;
+       
+    }
+}

@@ -1,0 +1,172 @@
+<div class="caja-formulario" [style.display]="display_form ? 'block' : 'none' ">
+
+  <div>
+    <form action="" class="form-venta">
+
+      <div class="boton-desplegable" (click)="opcionesAction()">
+        <div class="titulo">{{titulo}}</div>
+      </div>
+
+      <div class="cuadro-desplegable" [style.display]="display_opciones ? 'block' : 'none' ">
+
+        <input type="search" [style.display]="display_opciones ? 'block' : 'none' " placeholder="buscar" name="buscar"
+          [(ngModel)]="buscarproducto" (keyup)="searchProducto()">
+
+
+        <ul class="opciones">
+
+          <li *ngFor="let producto of productos" (click)="select(producto)">{{producto.nombre}}</li>
+
+        </ul>
+      </div>
+
+
+
+      <label for="">unidad</label>
+      <input type="number" name="unidad" [(ngModel)]="unidad" title="unidad">
+
+      <label for="">recibido</label>
+      <input type="number" name="recibido" [(ngModel)]="recibido" title="recibido">
+
+      <button (click)="agregar()" class="agregar" type="button">agregar</button>
+      <button (click)="FormAction('cerrar')" class="cerrar" type="button">cerrar</button>
+
+
+
+    </form>
+
+    <div class="caja-table" *ngIf="ventasArray.length != 0">
+      <table>
+        <thead>
+          <tr>
+            <th>producto</th>
+            <th>unidades</th>
+            <th>total</th>
+            <th>accion</th>
+
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of ventasArray;let i= index">
+            <td>{{v.producto_name}}</td>
+            <td>{{v.unidades}}</td>
+            <td>{{v.total.toLocaleString('es-CO')}}</td>
+            <td><img src="../assets/icon/delete.svg" class="delete" (click)="accion(i)"></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <div class="total">
+
+        <div>
+          <span> cambio: {{cambio().toLocaleString('es-CO')}}</span>
+
+        </div>
+
+        <p class="valor">
+          total ventas: {{totalventa.toLocaleString('es-CO')}}
+        </p>
+
+        <p class="ganado">
+          ganado:
+          {{valor_ganado.toLocaleString('es-CO')}}
+        </p>
+
+        <div>
+          <button (click)="save()" type="button" class="guardar">guardar</button>
+          <button type="button" (click)="cancelar()"  class="cancelar">cancelar</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<p *ngIf="!ventas">cargando</p>
+
+
+<div *ngIf="ventas" class="caja-tabla">
+
+  <div class="caja-boton">
+
+    <div>
+      <button class="generar" type="button" (click)="FormAction('generar')">generar venta</button>
+    </div>
+
+
+    <div>
+      <form (ngSubmit)="search()" class="form-tabla">
+        
+          <label for="">hasta</label>
+          <input name="fecha" [(ngModel)]="fecha" type="date">
+
+          <label for="">desde</label>
+          <input name="fecha2" [(ngModel)]="fecha2" type="date">
+        
+
+
+        
+          <button class="boton-buscar">buscar</button>
+        
+        
+      </form>
+
+
+
+    </div>
+
+  </div>
+
+  <div *ngIf="total_ventas && total_ganado" class="totalventas">
+    <p>total ventas {{total_ventas.toLocaleString('es-CO')}}</p>
+    <p>total ganado {{total_ganado.toLocaleString('es-CO')}}</p>
+  </div>
+
+  <div class="caja-table" *ngFor="let venta of ventas | paginate: { itemsPerPage: 5, currentPage: p }">
+    <table>
+      <thead>
+        <tr>
+          <th>producto</th>
+          <th>unidades</th>
+          <th>total</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of venta.venta_detalle">
+          <td>{{v.producto.nombre}}</td>
+          <td>{{v.unidades}}</td>
+          <td>{{v.total.toLocaleString('es-CO')}}</td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <div class="total">
+      <div class="fecha">{{formatearFecha(venta.created_at)}}</div>
+      <div class="valor"><span>total {{venta.costo.toLocaleString('es-CO')}}</span></div>
+
+      <div>
+        <button *ngIf="getLocalStorage(venta.id)" type="button" (click)="destroy(venta.id)"
+          class="borrar">borrar</button>
+      </div>
+
+      <div class="valor"><span>ganado {{venta.ganado.toLocaleString('es-CO')}}</span></div>
+
+    </div>
+
+  </div>
+  <pagination-controls *ngIf="productos" (pageChange)="p = $event" previousLabel="" nextLabel="">
+  </pagination-controls>
+</div>
